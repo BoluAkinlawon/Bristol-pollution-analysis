@@ -1,0 +1,1 @@
+select stations.location, readings.datetime, max(readings.nox) from readings join stations on(stations.stationid = readings.stationid) where readings.datetime like '2019%'

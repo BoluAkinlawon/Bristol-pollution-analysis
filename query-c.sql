@@ -1,0 +1,1 @@
+select readings.stationid, stations.location, readings.datetime, avg(readings.`pm2.5`) "Average PM2.5", avg(readings.`vpm2.5`) "Average VPM2.5" from readings left outer join stations on (stations.stationid = readings.stationid) where readings.datetime between '2010-01-01 00:00:00' and '2020-01-01 00:00:00' and readings.datetime like '%08:00%' group by readings.stationid;
